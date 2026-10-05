@@ -1,18 +1,24 @@
-#This asks for the user's input.
-km = float(input("Enter distance in kilometers: "))
-#cf here means conversion factor.
+
+# cf here means conversion factor.
 cf = 0.621371
-#mi is shortened form of miles.
-mi = km * cf
 
-print("Distance in miles:", mi)
-#This part asks the user if they want to continue running the code using an if-else structure
-q = input("Do you want to convert another distance? (yes/no): ")
+while True:
+    # This asks for the user's input.
+    km = float(input("Enter distance in kilometers: "))
 
-if q == "yes":
-#This part repeats the code from the start.
-    q = float(input("Enter distance in kilometers: "))
-    km2 = q * cf
-    print("Distance in miles:", km2)
-else:
-    print("Program ended.")
+    # mi is the shortened form of miles.
+    mi = km * cf
+
+    print("Distance in miles:", mi)
+
+    # .strip() removes extra spaces, while .lower() converts the input to lowercase.
+    q = input("Do you want to convert another distance? (yes/no): ").strip().lower()
+
+    if q == "no":
+        print("Program ended.")
+        break
+    elif q == "yes":
+        continue
+    else:
+        print("Invalid choice. The program will end.")
+        break
